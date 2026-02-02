@@ -29,6 +29,6 @@ class DBHandler:
 
     def obtener_todos(self):
         with sqlite3.connect(self.db_name) as conn:
-            conn.row_factory = sqlite3.Row # Esto nos permite leer por nombre de columna
+            conn.row_factory = sqlite3.Row # Leer por nombre de columna
             cursor = conn.execute("SELECT * FROM posts")
             return [dict(row) for row in cursor.fetchall()]
