@@ -29,7 +29,7 @@
     {% endif %}
     {% if not data %}
     <p style="text-align: center; color: #666;">No hay datos guardados. Haz clic en 'Actualizar' para empezar.</p>
-    {% endif %}
+    {% else %}
     <table>
         <thead>
             <tr>
@@ -48,5 +48,6 @@
             {% endfor %}
         </tbody>
     </table>
+    {% endif %}
 </body>
 </html>
