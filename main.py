@@ -18,7 +18,6 @@ def inicio(request: Request):
 
 @app.get("/actualizar")
 def actualizar_datos():
-    # Comienza el bot
     try:
         datos = api.obtener_datos()
         db.guardar_posts(datos)
@@ -30,7 +29,6 @@ def actualizar_datos():
 
 @app.get("/reporte")
 def ver_reporte():
-    # La API nos devuelve lo que hay en la base de datos
     datos_locales = db.obtener_todos()
     return {"data": datos_locales}
 
