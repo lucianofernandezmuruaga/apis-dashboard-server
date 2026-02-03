@@ -1,0 +1,11 @@
+# 1. Definimos qué "computadora" queremos que use GitLab (una con Python)
+image: python:3.10
+
+# 2. Pasos previos: instalar lo que nuestro proyecto necesita
+before_script:
+  - pip install fastapi uvicorn requests jinja2
+
+# 3. Definimos la tarea (Job) de testeo
+test_database:
+  script:
+    - python -m unittest test_db.py
